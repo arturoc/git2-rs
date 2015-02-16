@@ -206,7 +206,8 @@ impl<'repo> Drop for Submodule<'repo> {
 
 #[cfg(test)]
 mod tests {
-    use std::old_io::TempDir;
+    use std::old_io::{self, fs, TempDir};
+    use url::Url;
     use Repository;
 
     #[test]
@@ -234,5 +235,27 @@ mod tests {
         s.open().unwrap();
         assert!(s.path() == Path::new("bar"));
         s.reload(true).unwrap();
+    }
+
+    #[test]
+    fn subdir() {
+        let (td, repo) = ::test::repo_init();
+        let (td2, _other) = ::test::repo_init();
+
+        fs::mkdir(&td.path().join("a"), old_io::USER_DIR).unwrap();
+        {
+            let url = Url::from_file_path(td2.path()).unwrap();
+            let mut s = repo.submodule(&url.to_string(), &Path::new("a/bar"),
+                                       false).unwrap();
+            let subrepo = s.open().unwrap();
+            let mut origin = subrepo.find_remote("origin").unwrap();
+            origin.fetch(&["refs/heads/*:refs/heads/*"], None, None).unwrap();
+            origin.save().unwrap();
+            subrepo.checkout_head(None).unwrap();
+            s.add_finalize().unwrap();
+        }
+
+        repo.find_submodule("a/bar").unwrap();
+        repo.find_submodule(r"a\bar").unwrap(); // windows "path"
     }
 }

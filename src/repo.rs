@@ -774,7 +774,12 @@ impl Repository {
     ///
     /// Given either the submodule name or path (they are usually the same),
     /// this returns a structure describing the submodule.
+    ///
+    /// Note that submodule names generally use `/` as a path separator instead
+    /// of `\` so this function will automatically replace instances of `\` with
+    /// `/` in the given `name`.
     pub fn find_submodule(&self, name: &str) -> Result<Submodule, Error> {
+        let name = name.replace("\\", "/");
         let name = CString::from_slice(name.as_bytes());
         let mut raw = 0 as *mut raw::git_submodule;
         unsafe {
