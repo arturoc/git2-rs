@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DiffOptions` struct in crate `git2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DiffOptions">
+
+    <title>git2::DiffOptions - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>git2</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='build/index.html' title='Builder-pattern objects for configuration various git operations.'>build</a><a class='mod ' href='cert/index.html' title='Certificate types which are passed to `CertificateCheck` in `RemoteCallbacks`.'>cert</a><a class='mod ' href='string_array/index.html' title='Bindings to libgit2&#39;s raw git_strarray type'>string_array</a><a class='mod ' href='transport/index.html' title='Interfaces for adding custom transports to libgit2'>transport</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.Blob.html' title='A structure to represent a git [blob][1]'>Blob</a><a class='struct ' href='struct.Branch.html' title='A structure to represent a git [branch][1]'>Branch</a><a class='struct ' href='struct.Branches.html' title='An iterator over the branches inside of a repository.'>Branches</a><a class='struct ' href='struct.Buf.html' title='A structure to wrap an intermediate buffer used by libgit2.'>Buf</a><a class='struct ' href='struct.Commit.html' title='A structure to represent a git [commit][1]'>Commit</a><a class='struct ' href='struct.Config.html' title='A structure representing a git configuration key/value store'>Config</a><a class='struct ' href='struct.ConfigEntries.html' title='An iterator over the `ConfigEntry` values of a `Config` structure.'>ConfigEntries</a><a class='struct ' href='struct.ConfigEntry.html' title='A struct representing a certain entry owned by a `Config` instance.'>ConfigEntry</a><a class='struct ' href='struct.Cred.html' title='A structure to represent git credentials in libgit2.'>Cred</a><a class='struct ' href='struct.CredentialHelper.html' title='Management of the gitcredentials(7) interface.'>CredentialHelper</a><a class='struct ' href='struct.CredentialType.html' title=' Types of credentials that can be requested by a credential callback. '>CredentialType</a><a class='struct ' href='struct.Deltas.html' title='An iterator over the diffs in a delta'>Deltas</a><a class='struct ' href='struct.Diff.html' title='The diff object that contains all individual file deltas.'>Diff</a><a class='struct ' href='struct.DiffDelta.html' title='Description of changes to one entry.'>DiffDelta</a><a class='struct ' href='struct.DiffFile.html' title='Description of one side of a delta.'>DiffFile</a><a class='struct ' href='struct.DiffFindOptions.html' title='Control behavior of rename and copy detection'>DiffFindOptions</a><a class='struct ' href='struct.DiffHunk.html' title='Structure describing a hunk of a diff.'>DiffHunk</a><a class='struct ' href='struct.DiffLine.html' title='Structure describing a line (or data span) of a diff.'>DiffLine</a><a class='struct current' href='struct.DiffOptions.html' title='Structure describing options about how the diff should be executed.'>DiffOptions</a><a class='struct ' href='struct.DiffStats.html' title='Structure describing a hunk of a diff.'>DiffStats</a><a class='struct ' href='struct.DiffStatsFormat.html' title='/// Formatting options for diff stats'>DiffStatsFormat</a><a class='struct ' href='struct.Error.html' title='A structure to represent errors coming out of libgit2.'>Error</a><a class='struct ' href='struct.Index.html' title='A structure to represent a git [index][1]'>Index</a><a class='struct ' href='struct.IndexAddOption.html' title=' Flags for APIs that add files matching pathspec '>IndexAddOption</a><a class='struct ' href='struct.IndexEntries.html' title='An iterator over the entries in an index'>IndexEntries</a><a class='struct ' href='struct.IndexEntry.html' title='A structure to represent an entry or a file inside of an index.'>IndexEntry</a><a class='struct ' href='struct.IndexTime.html' title='Time structure used in a git index entry.'>IndexTime</a><a class='struct ' href='struct.Note.html' title='A structure representing a [note][note] in git.'>Note</a><a class='struct ' href='struct.Notes.html' title='An iterator over all of the notes within a repository.'>Notes</a><a class='struct ' href='struct.Object.html' title='A structure to represent a git [object][1]'>Object</a><a class='struct ' href='struct.Oid.html' title='Unique identity of any object (commit, tree, blob, tag).'>Oid</a><a class='struct ' href='struct.Parents.html' title='An iterator over the parent commits of a commit.'>Parents</a><a class='struct ' href='struct.Pathspec.html' title='Structure representing a compiled pathspec used for matching against various structures.'>Pathspec</a><a class='struct ' href='struct.PathspecDiffEntries.html' title='Iterator over the matching diff deltas.'>PathspecDiffEntries</a><a class='struct ' href='struct.PathspecEntries.html' title='Iterator over the matched paths in a pathspec.'>PathspecEntries</a><a class='struct ' href='struct.PathspecFailedEntries.html' title='Iterator over the failed list of pathspec items that did not match.'>PathspecFailedEntries</a><a class='struct ' href='struct.PathspecFlags.html' title=' '>PathspecFlags</a><a class='struct ' href='struct.PathspecMatchList.html' title='List of filenames matching a pathspec.'>PathspecMatchList</a><a class='struct ' href='struct.Progress.html' title='Struct representing the progress by an in-flight transfer.'>Progress</a><a class='struct ' href='struct.Push.html' title='A structure to represent a pending push operation to a remote.'>Push</a><a class='struct ' href='struct.PushStatus.html' title='A status representing the result of updating a remote reference.'>PushStatus</a><a class='struct ' href='struct.Reference.html' title='A structure to represent a git [reference][1].'>Reference</a><a class='struct ' href='struct.ReferenceNames.html' title='An iterator over the names of references in a repository.'>ReferenceNames</a><a class='struct ' href='struct.References.html' title='An iterator over the references in a repository.'>References</a><a class='struct ' href='struct.Reflog.html' title='A reference log of a git repository.'>Reflog</a><a class='struct ' href='struct.ReflogEntry.html' title='An entry inside the reflog of a repository'>ReflogEntry</a><a class='struct ' href='struct.ReflogIter.html' title='An iterator over the entries inside of a reflog.'>ReflogIter</a><a class='struct ' href='struct.Refspec.html' title='A structure to represent a git [refspec][1].'>Refspec</a><a class='struct ' href='struct.Refspecs.html' title='An iterator over the refspecs that a remote contains.'>Refspecs</a><a class='struct ' href='struct.Remote.html' title='A structure representing a [remote][1] of a git repository.'>Remote</a><a class='struct ' href='struct.RemoteCallbacks.html' title='A structure to contain the callbacks which are invoked when a repository is being updated or downloaded.'>RemoteCallbacks</a><a class='struct ' href='struct.RemoteHead.html' title='Description of a reference advertised bya remote server, given out on calls to `list`.'>RemoteHead</a><a class='struct ' href='struct.Repository.html' title='An owned git repository, representing all state associated with the underlying filesystem.'>Repository</a><a class='struct ' href='struct.RepositoryInitMode.html' title=' Mode options for RepositoryInitOptions '>RepositoryInitMode</a><a class='struct ' href='struct.RepositoryInitOptions.html' title='Options which can be used to configure how a repository is initialized'>RepositoryInitOptions</a><a class='struct ' href='struct.RevparseMode.html' title=' Flags for the return value of `Repository::revparse` '>RevparseMode</a><a class='struct ' href='struct.Revspec.html' title='A revspec represents a range of revisions within a repository.'>Revspec</a><a class='struct ' href='struct.Revwalk.html' title='A revwalk allows traversal of the commit graph defined by including one or more leaves and excluding one or more roots.'>Revwalk</a><a class='struct ' href='struct.Signature.html' title='A Signature is used to indicate authorship of various actions throughout the library.'>Signature</a><a class='struct ' href='struct.Sort.html' title=' Orderings that may be specified for Revwalk iteration. '>Sort</a><a class='struct ' href='struct.Status.html' title=' Flags for repository status '>Status</a><a class='struct ' href='struct.StatusEntry.html' title='A structure representing an entry in the `Statuses` structure.'>StatusEntry</a><a class='struct ' href='struct.StatusIter.html' title='An iterator over the statuses in a `Statuses` instance.'>StatusIter</a><a class='struct ' href='struct.StatusOptions.html' title='Options that can be provided to `repo.statuses()` to control how the status information is gathered.'>StatusOptions</a><a class='struct ' href='struct.Statuses.html' title='A container for a list of status information about a repository.'>Statuses</a><a class='struct ' href='struct.Submodule.html' title='A structure to represent a git [submodule][1]'>Submodule</a><a class='struct ' href='struct.SubmoduleStatus.html' title=' Return codes for submodule status.'>SubmoduleStatus</a><a class='struct ' href='struct.Tag.html' title='A structure to represent a git [tag][1]'>Tag</a><a class='struct ' href='struct.Time.html' title='Time in a signature'>Time</a><a class='struct ' href='struct.Tree.html' title='A structure to represent a git [tree][1]'>Tree</a><a class='struct ' href='struct.TreeEntry.html' title='A structure representing an entry inside of a tree. An entry is borrowed from a tree.'>TreeEntry</a><a class='struct ' href='struct.TreeIter.html' title='An iterator over the entries in a tree.'>TreeIter</a></div><div class='block enum'><h2>Enums</h2><a class='enum ' href='enum.BranchType.html' title='An enumeration for the possible types of branches'>BranchType</a><a class='enum ' href='enum.ConfigLevel.html' title='An enumeration of the possible priority levels of a config file.'>ConfigLevel</a><a class='enum ' href='enum.Delta.html' title='What type of change is described by a `DiffDelta`?'>Delta</a><a class='enum ' href='enum.DiffFormat.html' title='Possible output formats for diff data'>DiffFormat</a><a class='enum ' href='enum.Direction.html' title='An enumeration of the possible directions for a remote.'>Direction</a><a class='enum ' href='enum.ErrorCode.html' title='An enumeration of possible errors that can happen when working with a git repository.'>ErrorCode</a><a class='enum ' href='enum.ObjectType.html' title='An enumeration all possible kinds objects may have.'>ObjectType</a><a class='enum ' href='enum.RepositoryState.html' title='A listing of the possible states that a repository can be in.'>RepositoryState</a><a class='enum ' href='enum.ResetType.html' title='An enumeration of the operations that can be performed for the `reset` method on a `Repository`.'>ResetType</a><a class='enum ' href='enum.StatusShow.html' title='Enumeration of possible methods of what can be shown through a status operation.'>StatusShow</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.IntoCString.html' title='A class of types that can be converted to C strings.'>IntoCString</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>git2</a>::<wbr><a class='struct' href=''>DiffOptions</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]</a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-16576' href='../src/git2/diff.rs.html#37-43'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct DiffOptions {
+    // some fields omitted
+}</pre><div class='docblock'><p>Structure describing options about how the diff should be executed.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Creates a new set of empty diff options.</p>
+
+<p>All flags and other options are defaulted to false or their otherwise
+zero equivalents.</p>
+</div><h4 id='method.reverse' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.reverse' class='fnname'>reverse</a>(&amp;mut self, reverse: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Flag indicating whether the sides of the diff will be reversed.</p>
+</div><h4 id='method.include_ignored' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.include_ignored' class='fnname'>include_ignored</a>(&amp;mut self, include: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Flag indicating whether ignored files are included.</p>
+</div><h4 id='method.recurse_ignored_dirs' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.recurse_ignored_dirs' class='fnname'>recurse_ignored_dirs</a>(&amp;mut self, recurse: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Flag indicating whether ignored directories are traversed deeply or not.</p>
+</div><h4 id='method.include_untracked' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.include_untracked' class='fnname'>include_untracked</a>(&amp;mut self, include: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Flag indicating whether untracked files are in the diff</p>
+</div><h4 id='method.recurse_untracked_dirs' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.recurse_untracked_dirs' class='fnname'>recurse_untracked_dirs</a>(&amp;mut self, recurse: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Flag indicating whether untracked directories are deeply traversed or
+not.</p>
+</div><h4 id='method.include_unmodified' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.include_unmodified' class='fnname'>include_unmodified</a>(&amp;mut self, include: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Flag indicating whether unmodified files are in the diff.</p>
+</div><h4 id='method.include_typechange' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.include_typechange' class='fnname'>include_typechange</a>(&amp;mut self, include: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>If entrabled, then Typechange delta records are generated.</p>
+</div><h4 id='method.include_typechange_trees' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.include_typechange_trees' class='fnname'>include_typechange_trees</a>(&amp;mut self, include: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Event with <code>include_typechange</code>, the tree treturned generally shows a
+deleted blow. This flag correctly labels the tree transitions as a
+typechange record with the <code>new_file</code>&#39;s mode set to tree.</p>
+
+<p>Note that the tree SHA will not be available.</p>
+</div><h4 id='method.ignore_filemode' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.ignore_filemode' class='fnname'>ignore_filemode</a>(&amp;mut self, ignore: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Flag indicating whether file mode changes are ignored.</p>
+</div><h4 id='method.ignore_submodules' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.ignore_submodules' class='fnname'>ignore_submodules</a>(&amp;mut self, ignore: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Flag indicating whether all submodules should be treated as unmodified.</p>
+</div><h4 id='method.ignore_case' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.ignore_case' class='fnname'>ignore_case</a>(&amp;mut self, ignore: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Flag indicating whether case insensitive filenames should be used.</p>
+</div><h4 id='method.disable_pathspec_match' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.disable_pathspec_match' class='fnname'>disable_pathspec_match</a>(&amp;mut self, disable: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>If pathspecs are specified, this flag means that they should be applied
+as an exact match instead of a fnmatch pattern.</p>
+</div><h4 id='method.skip_binary_check' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.skip_binary_check' class='fnname'>skip_binary_check</a>(&amp;mut self, skip: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Disable updating the <code>binary</code> flag in delta records. This is useful when
+iterating over a diff if you don&#39;t need hunk and data callbacks and want
+to avoid having to load a file completely.</p>
+</div><h4 id='method.enable_fast_untracked_dirs' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.enable_fast_untracked_dirs' class='fnname'>enable_fast_untracked_dirs</a>(&amp;mut self, enable: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>When diff finds an untracked directory, to match the behavior of core
+Git, it scans the contents for ignored and untracked files. If all
+contents are ignored, then the directory is ignored; if any contents are
+not ignored, then the directory is untracked. This is extra work that
+may not matter in many cases.</p>
+
+<p>This flag turns off that scan and immediately labels an untracked
+directory as untracked (changing the behavior to not match core git).</p>
+</div><h4 id='method.update_index' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.update_index' class='fnname'>update_index</a>(&amp;mut self, update: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>When diff finds a file in the working directory with stat information
+different from the index, but the OID ends up being the same, write the
+correct stat information into the index. Note: without this flag, diff
+will always leave the index untouched.</p>
+</div><h4 id='method.include_unreadable' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.include_unreadable' class='fnname'>include_unreadable</a>(&amp;mut self, include: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Include unreadable files in the diff</p>
+</div><h4 id='method.include_unreadable_as_untracked' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.include_unreadable_as_untracked' class='fnname'>include_unreadable_as_untracked</a>(&amp;mut self, include: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Include unreadable files in the diff</p>
+</div><h4 id='method.force_text' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.force_text' class='fnname'>force_text</a>(&amp;mut self, force: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Treat all files as text, disabling binary attributes and detection.</p>
+</div><h4 id='method.force_binary' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.force_binary' class='fnname'>force_binary</a>(&amp;mut self, force: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Treat all files as binary, disabling text diffs</p>
+</div><h4 id='method.ignore_whitespace' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.ignore_whitespace' class='fnname'>ignore_whitespace</a>(&amp;mut self, ignore: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Ignore all whitespace</p>
+</div><h4 id='method.ignore_whitespace_change' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.ignore_whitespace_change' class='fnname'>ignore_whitespace_change</a>(&amp;mut self, ignore: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Ignore changes in the amount of whitespace</p>
+</div><h4 id='method.ignore_whitespace_eol' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.ignore_whitespace_eol' class='fnname'>ignore_whitespace_eol</a>(&amp;mut self, ignore: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Ignore whitespace at tend of line</p>
+</div><h4 id='method.show_untracked_content' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.show_untracked_content' class='fnname'>show_untracked_content</a>(&amp;mut self, show: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>When generating patch text, include the content of untracked files.</p>
+
+<p>This automatically turns on <code>include_untracked</code> but it does not turn on
+<code>recurse_untracked_dirs</code>. Add that flag if you want the content of every
+single untracked file.</p>
+</div><h4 id='method.show_unmodified' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.show_unmodified' class='fnname'>show_unmodified</a>(&amp;mut self, show: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>When generating output, include the names of unmodified files if they
+are included in the <code>Diff</code>. Normally these are skipped in the formats
+that list files (e.g. name-only, name-status, raw). Even with this these
+will not be included in the patch format.</p>
+</div><h4 id='method.patience' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.patience' class='fnname'>patience</a>(&amp;mut self, patience: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Use the &quot;patience diff&quot; algorithm</p>
+</div><h4 id='method.minimal' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.minimal' class='fnname'>minimal</a>(&amp;mut self, minimal: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Take extra time to find the minimal diff</p>
+</div><h4 id='method.show_binary' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.show_binary' class='fnname'>show_binary</a>(&amp;mut self, show: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Include the necessary deflate/delta information so that <code>git-apply</code> can
+apply given diff information to binary files.</p>
+</div><h4 id='method.context_lines' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.context_lines' class='fnname'>context_lines</a>(&amp;mut self, lines: <a href='http://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Set the number of unchanged lines that define the boundary of a hunk
+(and to display before and after).</p>
+
+<p>The default value for this is 3.</p>
+</div><h4 id='method.interhunk_lines' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.interhunk_lines' class='fnname'>interhunk_lines</a>(&amp;mut self, lines: <a href='http://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Set the maximum number of unchanged lines between hunk boundaries before
+the hunks will be merged into one.</p>
+
+<p>The default value for this is 0.</p>
+</div><h4 id='method.id_abbrev' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.id_abbrev' class='fnname'>id_abbrev</a>(&amp;mut self, abbrev: <a href='http://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>The default value for this is <code>core.abbrev</code> or 7 if unset.</p>
+</div><h4 id='method.max_size' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.max_size' class='fnname'>max_size</a>(&amp;mut self, size: <a href='http://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a>) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Maximum size (in bytes) above which a blob will be marked as binary
+automatically.</p>
+
+<p>A negative value will disable this entirely.</p>
+
+<p>The default value for this is 512MB.</p>
+</div><h4 id='method.old_prefix' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.old_prefix' class='fnname'>old_prefix</a>&lt;T: <a class='trait' href='../git2/trait.IntoCString.html' title='git2::IntoCString'>IntoCString</a>&gt;(&amp;mut self, t: T) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>The virtual &quot;directory&quot; to prefix old file names with in hunk headers.</p>
+
+<p>The default value for this is &quot;a&quot;.</p>
+</div><h4 id='method.new_prefix' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.new_prefix' class='fnname'>new_prefix</a>&lt;T: <a class='trait' href='../git2/trait.IntoCString.html' title='git2::IntoCString'>IntoCString</a>&gt;(&amp;mut self, t: T) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>The virtual &quot;directory&quot; to prefix new file names with in hunk headers.</p>
+
+<p>The default value for this is &quot;b&quot;.</p>
+</div><h4 id='method.pathspec' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.pathspec' class='fnname'>pathspec</a>&lt;T: <a class='trait' href='../git2/trait.IntoCString.html' title='git2::IntoCString'>IntoCString</a>&gt;(&amp;mut self, pathspec: T) -&gt; &amp;mut <a class='struct' href='../git2/struct.DiffOptions.html' title='git2::DiffOptions'>DiffOptions</a></code></h4>
+<div class='docblock'><p>Add to the array of paths/fnmatch patterns to constrain the diff.</p>
+</div><h4 id='method.raw' class='method'><a class='stability Unmarked' title='No stability level'></a><code>unsafe fn <a href='#method.raw' class='fnname'>raw</a>(&amp;mut self) -&gt; *const <a class='struct' href='../libgit2-sys/struct.git_diff_options.html' title='libgit2-sys::git_diff_options'>git_diff_options</a></code></h4>
+<div class='docblock'><p>Acquire a pointer to the underlying raw options.</p>
+
+<p>This function is unsafe as the pointer is only valid so long as this
+structure is not moved, modified, or used elsewhere.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "git2";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>

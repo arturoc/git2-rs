@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `CURLcode` enum in crate `curl-sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, CURLcode">
+
+    <title>curl-sys::CURLcode - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>curl-sys</a></p><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.curl_version_info_data.html' title=''>curl_version_info_data</a></div><div class='block enum'><h2>Enums</h2><a class='enum current' href='enum.CURLcode.html' title=''>CURLcode</a><a class='enum ' href='enum.CURLversion.html' title=''>CURLversion</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>curl-sys</a>::<wbr><a class='enum' href=''>CURLcode</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]</a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-284' href='../src/curl-sys/lib.rs.html#93-213'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum CURLcode {
+    CURLE_OK,
+    CURLE_UNSUPPORTED_PROTOCOL,
+    CURLE_FAILED_INIT,
+    CURLE_URL_MALFORMAT,
+    CURLE_NOT_BUILT_IN,
+    CURLE_COULDNT_RESOLVE_PROXY,
+    CURLE_COULDNT_RESOLVE_HOST,
+    CURLE_COULDNT_CONNECT,
+    CURLE_FTP_WEIRD_SERVER_REPLY,
+    CURLE_REMOTE_ACCESS_DENIED,
+    CURLE_FTP_ACCEPT_FAILED,
+    CURLE_FTP_WEIRD_PASS_REPLY,
+    CURLE_FTP_ACCEPT_TIMEOUT,
+    CURLE_FTP_WEIRD_PASV_REPLY,
+    CURLE_FTP_WEIRD_227_FORMAT,
+    CURLE_FTP_CANT_GET_HOST,
+    CURLE_OBSOLETE16,
+    CURLE_FTP_COULDNT_SET_TYPE,
+    CURLE_PARTIAL_FILE,
+    CURLE_FTP_COULDNT_RETR_FILE,
+    CURLE_OBSOLETE20,
+    CURLE_QUOTE_ERROR,
+    CURLE_HTTP_RETURNED_ERROR,
+    CURLE_WRITE_ERROR,
+    CURLE_OBSOLETE24,
+    CURLE_UPLOAD_FAILED,
+    CURLE_READ_ERROR,
+    CURLE_OUT_OF_MEMORY,
+    CURLE_OPERATION_TIMEDOUT,
+    CURLE_OBSOLETE29,
+    CURLE_FTP_PORT_FAILED,
+    CURLE_FTP_COULDNT_USE_REST,
+    CURLE_OBSOLETE32,
+    CURLE_RANGE_ERROR,
+    CURLE_HTTP_POST_ERROR,
+    CURLE_SSL_CONNECT_ERROR,
+    CURLE_BAD_DOWNLOAD_RESUME,
+    CURLE_FILE_COULDNT_READ_FILE,
+    CURLE_LDAP_CANNOT_BIND,
+    CURLE_LDAP_SEARCH_FAILED,
+    CURLE_OBSOLETE40,
+    CURLE_FUNCTION_NOT_FOUND,
+    CURLE_ABORTED_BY_CALLBACK,
+    CURLE_BAD_FUNCTION_ARGUMENT,
+    CURLE_OBSOLETE44,
+    CURLE_INTERFACE_FAILED,
+    CURLE_OBSOLETE46,
+    CURLE_TOO_MANY_REDIRECTS,
+    CURLE_UNKNOWN_OPTION,
+    CURLE_TELNET_OPTION_SYNTAX,
+    CURLE_OBSOLETE50,
+    CURLE_PEER_FAILED_VERIFICATION,
+    CURLE_GOT_NOTHING,
+    CURLE_SSL_ENGINE_NOTFOUND,
+    CURLE_SSL_ENGINE_SETFAILED,
+    CURLE_SEND_ERROR,
+    CURLE_RECV_ERROR,
+    CURLE_OBSOLETE57,
+    CURLE_SSL_CERTPROBLEM,
+    CURLE_SSL_CIPHER,
+    CURLE_SSL_CACERT,
+    CURLE_BAD_CONTENT_ENCODING,
+    CURLE_LDAP_INVALID_URL,
+    CURLE_FILESIZE_EXCEEDED,
+    CURLE_USE_SSL_FAILED,
+    CURLE_SEND_FAIL_REWIND,
+    CURLE_SSL_ENGINE_INITFAILED,
+    CURLE_LOGIN_DENIED,
+    CURLE_TFTP_NOTFOUND,
+    CURLE_TFTP_PERM,
+    CURLE_REMOTE_DISK_FULL,
+    CURLE_TFTP_ILLEGAL,
+    CURLE_TFTP_UNKNOWNID,
+    CURLE_REMOTE_FILE_EXISTS,
+    CURLE_TFTP_NOSUCHUSER,
+    CURLE_CONV_FAILED,
+    CURLE_CONV_REQD,
+    CURLE_SSL_CACERT_BADFILE,
+    CURLE_REMOTE_FILE_NOT_FOUND,
+    CURLE_SSH,
+    CURLE_SSL_SHUTDOWN_FAILED,
+    CURLE_AGAIN,
+    CURLE_SSL_CRL_BADFILE,
+    CURLE_SSL_ISSUER_ERROR,
+    CURLE_FTP_PRET_FAILED,
+    CURLE_RTSP_CSEQ_ERROR,
+    CURLE_RTSP_SESSION_ERROR,
+    CURLE_FTP_BAD_FILE_LIST,
+    CURLE_CHUNK_FAILED,
+    CURLE_NO_CONNECTION_AVAILABLE,
+    CURLE_LAST,
+}</pre><h2 class='variants'>Variants</h2>
+<table><tr><td id='variant.CURLE_OK'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_OK</code></td><td></td></tr><tr><td id='variant.CURLE_UNSUPPORTED_PROTOCOL'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_UNSUPPORTED_PROTOCOL</code></td><td></td></tr><tr><td id='variant.CURLE_FAILED_INIT'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FAILED_INIT</code></td><td></td></tr><tr><td id='variant.CURLE_URL_MALFORMAT'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_URL_MALFORMAT</code></td><td></td></tr><tr><td id='variant.CURLE_NOT_BUILT_IN'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_NOT_BUILT_IN</code></td><td></td></tr><tr><td id='variant.CURLE_COULDNT_RESOLVE_PROXY'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_COULDNT_RESOLVE_PROXY</code></td><td></td></tr><tr><td id='variant.CURLE_COULDNT_RESOLVE_HOST'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_COULDNT_RESOLVE_HOST</code></td><td></td></tr><tr><td id='variant.CURLE_COULDNT_CONNECT'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_COULDNT_CONNECT</code></td><td></td></tr><tr><td id='variant.CURLE_FTP_WEIRD_SERVER_REPLY'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FTP_WEIRD_SERVER_REPLY</code></td><td></td></tr><tr><td id='variant.CURLE_REMOTE_ACCESS_DENIED'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_REMOTE_ACCESS_DENIED</code></td><td></td></tr><tr><td id='variant.CURLE_FTP_ACCEPT_FAILED'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FTP_ACCEPT_FAILED</code></td><td></td></tr><tr><td id='variant.CURLE_FTP_WEIRD_PASS_REPLY'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FTP_WEIRD_PASS_REPLY</code></td><td></td></tr><tr><td id='variant.CURLE_FTP_ACCEPT_TIMEOUT'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FTP_ACCEPT_TIMEOUT</code></td><td></td></tr><tr><td id='variant.CURLE_FTP_WEIRD_PASV_REPLY'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FTP_WEIRD_PASV_REPLY</code></td><td></td></tr><tr><td id='variant.CURLE_FTP_WEIRD_227_FORMAT'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FTP_WEIRD_227_FORMAT</code></td><td></td></tr><tr><td id='variant.CURLE_FTP_CANT_GET_HOST'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FTP_CANT_GET_HOST</code></td><td></td></tr><tr><td id='variant.CURLE_OBSOLETE16'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_OBSOLETE16</code></td><td></td></tr><tr><td id='variant.CURLE_FTP_COULDNT_SET_TYPE'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FTP_COULDNT_SET_TYPE</code></td><td></td></tr><tr><td id='variant.CURLE_PARTIAL_FILE'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_PARTIAL_FILE</code></td><td></td></tr><tr><td id='variant.CURLE_FTP_COULDNT_RETR_FILE'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FTP_COULDNT_RETR_FILE</code></td><td></td></tr><tr><td id='variant.CURLE_OBSOLETE20'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_OBSOLETE20</code></td><td></td></tr><tr><td id='variant.CURLE_QUOTE_ERROR'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_QUOTE_ERROR</code></td><td></td></tr><tr><td id='variant.CURLE_HTTP_RETURNED_ERROR'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_HTTP_RETURNED_ERROR</code></td><td></td></tr><tr><td id='variant.CURLE_WRITE_ERROR'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_WRITE_ERROR</code></td><td></td></tr><tr><td id='variant.CURLE_OBSOLETE24'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_OBSOLETE24</code></td><td></td></tr><tr><td id='variant.CURLE_UPLOAD_FAILED'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_UPLOAD_FAILED</code></td><td></td></tr><tr><td id='variant.CURLE_READ_ERROR'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_READ_ERROR</code></td><td></td></tr><tr><td id='variant.CURLE_OUT_OF_MEMORY'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_OUT_OF_MEMORY</code></td><td></td></tr><tr><td id='variant.CURLE_OPERATION_TIMEDOUT'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_OPERATION_TIMEDOUT</code></td><td></td></tr><tr><td id='variant.CURLE_OBSOLETE29'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_OBSOLETE29</code></td><td></td></tr><tr><td id='variant.CURLE_FTP_PORT_FAILED'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FTP_PORT_FAILED</code></td><td></td></tr><tr><td id='variant.CURLE_FTP_COULDNT_USE_REST'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FTP_COULDNT_USE_REST</code></td><td></td></tr><tr><td id='variant.CURLE_OBSOLETE32'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_OBSOLETE32</code></td><td></td></tr><tr><td id='variant.CURLE_RANGE_ERROR'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_RANGE_ERROR</code></td><td></td></tr><tr><td id='variant.CURLE_HTTP_POST_ERROR'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_HTTP_POST_ERROR</code></td><td></td></tr><tr><td id='variant.CURLE_SSL_CONNECT_ERROR'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_SSL_CONNECT_ERROR</code></td><td></td></tr><tr><td id='variant.CURLE_BAD_DOWNLOAD_RESUME'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_BAD_DOWNLOAD_RESUME</code></td><td></td></tr><tr><td id='variant.CURLE_FILE_COULDNT_READ_FILE'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FILE_COULDNT_READ_FILE</code></td><td></td></tr><tr><td id='variant.CURLE_LDAP_CANNOT_BIND'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_LDAP_CANNOT_BIND</code></td><td></td></tr><tr><td id='variant.CURLE_LDAP_SEARCH_FAILED'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_LDAP_SEARCH_FAILED</code></td><td></td></tr><tr><td id='variant.CURLE_OBSOLETE40'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_OBSOLETE40</code></td><td></td></tr><tr><td id='variant.CURLE_FUNCTION_NOT_FOUND'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FUNCTION_NOT_FOUND</code></td><td></td></tr><tr><td id='variant.CURLE_ABORTED_BY_CALLBACK'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_ABORTED_BY_CALLBACK</code></td><td></td></tr><tr><td id='variant.CURLE_BAD_FUNCTION_ARGUMENT'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_BAD_FUNCTION_ARGUMENT</code></td><td></td></tr><tr><td id='variant.CURLE_OBSOLETE44'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_OBSOLETE44</code></td><td></td></tr><tr><td id='variant.CURLE_INTERFACE_FAILED'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_INTERFACE_FAILED</code></td><td></td></tr><tr><td id='variant.CURLE_OBSOLETE46'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_OBSOLETE46</code></td><td></td></tr><tr><td id='variant.CURLE_TOO_MANY_REDIRECTS'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_TOO_MANY_REDIRECTS</code></td><td></td></tr><tr><td id='variant.CURLE_UNKNOWN_OPTION'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_UNKNOWN_OPTION</code></td><td></td></tr><tr><td id='variant.CURLE_TELNET_OPTION_SYNTAX'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_TELNET_OPTION_SYNTAX</code></td><td></td></tr><tr><td id='variant.CURLE_OBSOLETE50'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_OBSOLETE50</code></td><td></td></tr><tr><td id='variant.CURLE_PEER_FAILED_VERIFICATION'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_PEER_FAILED_VERIFICATION</code></td><td></td></tr><tr><td id='variant.CURLE_GOT_NOTHING'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_GOT_NOTHING</code></td><td></td></tr><tr><td id='variant.CURLE_SSL_ENGINE_NOTFOUND'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_SSL_ENGINE_NOTFOUND</code></td><td></td></tr><tr><td id='variant.CURLE_SSL_ENGINE_SETFAILED'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_SSL_ENGINE_SETFAILED</code></td><td></td></tr><tr><td id='variant.CURLE_SEND_ERROR'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_SEND_ERROR</code></td><td></td></tr><tr><td id='variant.CURLE_RECV_ERROR'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_RECV_ERROR</code></td><td></td></tr><tr><td id='variant.CURLE_OBSOLETE57'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_OBSOLETE57</code></td><td></td></tr><tr><td id='variant.CURLE_SSL_CERTPROBLEM'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_SSL_CERTPROBLEM</code></td><td></td></tr><tr><td id='variant.CURLE_SSL_CIPHER'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_SSL_CIPHER</code></td><td></td></tr><tr><td id='variant.CURLE_SSL_CACERT'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_SSL_CACERT</code></td><td></td></tr><tr><td id='variant.CURLE_BAD_CONTENT_ENCODING'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_BAD_CONTENT_ENCODING</code></td><td></td></tr><tr><td id='variant.CURLE_LDAP_INVALID_URL'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_LDAP_INVALID_URL</code></td><td></td></tr><tr><td id='variant.CURLE_FILESIZE_EXCEEDED'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FILESIZE_EXCEEDED</code></td><td></td></tr><tr><td id='variant.CURLE_USE_SSL_FAILED'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_USE_SSL_FAILED</code></td><td></td></tr><tr><td id='variant.CURLE_SEND_FAIL_REWIND'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_SEND_FAIL_REWIND</code></td><td></td></tr><tr><td id='variant.CURLE_SSL_ENGINE_INITFAILED'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_SSL_ENGINE_INITFAILED</code></td><td></td></tr><tr><td id='variant.CURLE_LOGIN_DENIED'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_LOGIN_DENIED</code></td><td></td></tr><tr><td id='variant.CURLE_TFTP_NOTFOUND'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_TFTP_NOTFOUND</code></td><td></td></tr><tr><td id='variant.CURLE_TFTP_PERM'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_TFTP_PERM</code></td><td></td></tr><tr><td id='variant.CURLE_REMOTE_DISK_FULL'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_REMOTE_DISK_FULL</code></td><td></td></tr><tr><td id='variant.CURLE_TFTP_ILLEGAL'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_TFTP_ILLEGAL</code></td><td></td></tr><tr><td id='variant.CURLE_TFTP_UNKNOWNID'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_TFTP_UNKNOWNID</code></td><td></td></tr><tr><td id='variant.CURLE_REMOTE_FILE_EXISTS'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_REMOTE_FILE_EXISTS</code></td><td></td></tr><tr><td id='variant.CURLE_TFTP_NOSUCHUSER'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_TFTP_NOSUCHUSER</code></td><td></td></tr><tr><td id='variant.CURLE_CONV_FAILED'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_CONV_FAILED</code></td><td></td></tr><tr><td id='variant.CURLE_CONV_REQD'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_CONV_REQD</code></td><td></td></tr><tr><td id='variant.CURLE_SSL_CACERT_BADFILE'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_SSL_CACERT_BADFILE</code></td><td></td></tr><tr><td id='variant.CURLE_REMOTE_FILE_NOT_FOUND'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_REMOTE_FILE_NOT_FOUND</code></td><td></td></tr><tr><td id='variant.CURLE_SSH'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_SSH</code></td><td></td></tr><tr><td id='variant.CURLE_SSL_SHUTDOWN_FAILED'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_SSL_SHUTDOWN_FAILED</code></td><td></td></tr><tr><td id='variant.CURLE_AGAIN'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_AGAIN</code></td><td></td></tr><tr><td id='variant.CURLE_SSL_CRL_BADFILE'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_SSL_CRL_BADFILE</code></td><td></td></tr><tr><td id='variant.CURLE_SSL_ISSUER_ERROR'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_SSL_ISSUER_ERROR</code></td><td></td></tr><tr><td id='variant.CURLE_FTP_PRET_FAILED'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FTP_PRET_FAILED</code></td><td></td></tr><tr><td id='variant.CURLE_RTSP_CSEQ_ERROR'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_RTSP_CSEQ_ERROR</code></td><td></td></tr><tr><td id='variant.CURLE_RTSP_SESSION_ERROR'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_RTSP_SESSION_ERROR</code></td><td></td></tr><tr><td id='variant.CURLE_FTP_BAD_FILE_LIST'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_FTP_BAD_FILE_LIST</code></td><td></td></tr><tr><td id='variant.CURLE_CHUNK_FAILED'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_CHUNK_FAILED</code></td><td></td></tr><tr><td id='variant.CURLE_NO_CONNECTION_AVAILABLE'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_NO_CONNECTION_AVAILABLE</code></td><td></td></tr><tr><td id='variant.CURLE_LAST'><a class='stability Unmarked' title='No stability level'></a><code>CURLE_LAST</code></td><td></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../curl-sys/enum.CURLcode.html' title='curl-sys::CURLcode'>CURLcode</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='enum' href='../curl-sys/enum.CURLcode.html' title='curl-sys::CURLcode'>CURLcode</a></code></h3><div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "curl-sys";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>

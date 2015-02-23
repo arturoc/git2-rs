@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Deltas` struct in crate `git2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Deltas">
+
+    <title>git2::Deltas - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>git2</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='build/index.html' title='Builder-pattern objects for configuration various git operations.'>build</a><a class='mod ' href='cert/index.html' title='Certificate types which are passed to `CertificateCheck` in `RemoteCallbacks`.'>cert</a><a class='mod ' href='string_array/index.html' title='Bindings to libgit2&#39;s raw git_strarray type'>string_array</a><a class='mod ' href='transport/index.html' title='Interfaces for adding custom transports to libgit2'>transport</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.Blob.html' title='A structure to represent a git [blob][1]'>Blob</a><a class='struct ' href='struct.Branch.html' title='A structure to represent a git [branch][1]'>Branch</a><a class='struct ' href='struct.Branches.html' title='An iterator over the branches inside of a repository.'>Branches</a><a class='struct ' href='struct.Buf.html' title='A structure to wrap an intermediate buffer used by libgit2.'>Buf</a><a class='struct ' href='struct.Commit.html' title='A structure to represent a git [commit][1]'>Commit</a><a class='struct ' href='struct.Config.html' title='A structure representing a git configuration key/value store'>Config</a><a class='struct ' href='struct.ConfigEntries.html' title='An iterator over the `ConfigEntry` values of a `Config` structure.'>ConfigEntries</a><a class='struct ' href='struct.ConfigEntry.html' title='A struct representing a certain entry owned by a `Config` instance.'>ConfigEntry</a><a class='struct ' href='struct.Cred.html' title='A structure to represent git credentials in libgit2.'>Cred</a><a class='struct ' href='struct.CredentialHelper.html' title='Management of the gitcredentials(7) interface.'>CredentialHelper</a><a class='struct ' href='struct.CredentialType.html' title=' Types of credentials that can be requested by a credential callback. '>CredentialType</a><a class='struct current' href='struct.Deltas.html' title='An iterator over the diffs in a delta'>Deltas</a><a class='struct ' href='struct.Diff.html' title='The diff object that contains all individual file deltas.'>Diff</a><a class='struct ' href='struct.DiffDelta.html' title='Description of changes to one entry.'>DiffDelta</a><a class='struct ' href='struct.DiffFile.html' title='Description of one side of a delta.'>DiffFile</a><a class='struct ' href='struct.DiffFindOptions.html' title='Control behavior of rename and copy detection'>DiffFindOptions</a><a class='struct ' href='struct.DiffHunk.html' title='Structure describing a hunk of a diff.'>DiffHunk</a><a class='struct ' href='struct.DiffLine.html' title='Structure describing a line (or data span) of a diff.'>DiffLine</a><a class='struct ' href='struct.DiffOptions.html' title='Structure describing options about how the diff should be executed.'>DiffOptions</a><a class='struct ' href='struct.DiffStats.html' title='Structure describing a hunk of a diff.'>DiffStats</a><a class='struct ' href='struct.DiffStatsFormat.html' title='/// Formatting options for diff stats'>DiffStatsFormat</a><a class='struct ' href='struct.Error.html' title='A structure to represent errors coming out of libgit2.'>Error</a><a class='struct ' href='struct.Index.html' title='A structure to represent a git [index][1]'>Index</a><a class='struct ' href='struct.IndexAddOption.html' title=' Flags for APIs that add files matching pathspec '>IndexAddOption</a><a class='struct ' href='struct.IndexEntries.html' title='An iterator over the entries in an index'>IndexEntries</a><a class='struct ' href='struct.IndexEntry.html' title='A structure to represent an entry or a file inside of an index.'>IndexEntry</a><a class='struct ' href='struct.IndexTime.html' title='Time structure used in a git index entry.'>IndexTime</a><a class='struct ' href='struct.Note.html' title='A structure representing a [note][note] in git.'>Note</a><a class='struct ' href='struct.Notes.html' title='An iterator over all of the notes within a repository.'>Notes</a><a class='struct ' href='struct.Object.html' title='A structure to represent a git [object][1]'>Object</a><a class='struct ' href='struct.Oid.html' title='Unique identity of any object (commit, tree, blob, tag).'>Oid</a><a class='struct ' href='struct.Parents.html' title='An iterator over the parent commits of a commit.'>Parents</a><a class='struct ' href='struct.Pathspec.html' title='Structure representing a compiled pathspec used for matching against various structures.'>Pathspec</a><a class='struct ' href='struct.PathspecDiffEntries.html' title='Iterator over the matching diff deltas.'>PathspecDiffEntries</a><a class='struct ' href='struct.PathspecEntries.html' title='Iterator over the matched paths in a pathspec.'>PathspecEntries</a><a class='struct ' href='struct.PathspecFailedEntries.html' title='Iterator over the failed list of pathspec items that did not match.'>PathspecFailedEntries</a><a class='struct ' href='struct.PathspecFlags.html' title=' '>PathspecFlags</a><a class='struct ' href='struct.PathspecMatchList.html' title='List of filenames matching a pathspec.'>PathspecMatchList</a><a class='struct ' href='struct.Progress.html' title='Struct representing the progress by an in-flight transfer.'>Progress</a><a class='struct ' href='struct.Push.html' title='A structure to represent a pending push operation to a remote.'>Push</a><a class='struct ' href='struct.PushStatus.html' title='A status representing the result of updating a remote reference.'>PushStatus</a><a class='struct ' href='struct.Reference.html' title='A structure to represent a git [reference][1].'>Reference</a><a class='struct ' href='struct.ReferenceNames.html' title='An iterator over the names of references in a repository.'>ReferenceNames</a><a class='struct ' href='struct.References.html' title='An iterator over the references in a repository.'>References</a><a class='struct ' href='struct.Reflog.html' title='A reference log of a git repository.'>Reflog</a><a class='struct ' href='struct.ReflogEntry.html' title='An entry inside the reflog of a repository'>ReflogEntry</a><a class='struct ' href='struct.ReflogIter.html' title='An iterator over the entries inside of a reflog.'>ReflogIter</a><a class='struct ' href='struct.Refspec.html' title='A structure to represent a git [refspec][1].'>Refspec</a><a class='struct ' href='struct.Refspecs.html' title='An iterator over the refspecs that a remote contains.'>Refspecs</a><a class='struct ' href='struct.Remote.html' title='A structure representing a [remote][1] of a git repository.'>Remote</a><a class='struct ' href='struct.RemoteCallbacks.html' title='A structure to contain the callbacks which are invoked when a repository is being updated or downloaded.'>RemoteCallbacks</a><a class='struct ' href='struct.RemoteHead.html' title='Description of a reference advertised bya remote server, given out on calls to `list`.'>RemoteHead</a><a class='struct ' href='struct.Repository.html' title='An owned git repository, representing all state associated with the underlying filesystem.'>Repository</a><a class='struct ' href='struct.RepositoryInitMode.html' title=' Mode options for RepositoryInitOptions '>RepositoryInitMode</a><a class='struct ' href='struct.RepositoryInitOptions.html' title='Options which can be used to configure how a repository is initialized'>RepositoryInitOptions</a><a class='struct ' href='struct.RevparseMode.html' title=' Flags for the return value of `Repository::revparse` '>RevparseMode</a><a class='struct ' href='struct.Revspec.html' title='A revspec represents a range of revisions within a repository.'>Revspec</a><a class='struct ' href='struct.Revwalk.html' title='A revwalk allows traversal of the commit graph defined by including one or more leaves and excluding one or more roots.'>Revwalk</a><a class='struct ' href='struct.Signature.html' title='A Signature is used to indicate authorship of various actions throughout the library.'>Signature</a><a class='struct ' href='struct.Sort.html' title=' Orderings that may be specified for Revwalk iteration. '>Sort</a><a class='struct ' href='struct.Status.html' title=' Flags for repository status '>Status</a><a class='struct ' href='struct.StatusEntry.html' title='A structure representing an entry in the `Statuses` structure.'>StatusEntry</a><a class='struct ' href='struct.StatusIter.html' title='An iterator over the statuses in a `Statuses` instance.'>StatusIter</a><a class='struct ' href='struct.StatusOptions.html' title='Options that can be provided to `repo.statuses()` to control how the status information is gathered.'>StatusOptions</a><a class='struct ' href='struct.Statuses.html' title='A container for a list of status information about a repository.'>Statuses</a><a class='struct ' href='struct.Submodule.html' title='A structure to represent a git [submodule][1]'>Submodule</a><a class='struct ' href='struct.SubmoduleStatus.html' title=' Return codes for submodule status.'>SubmoduleStatus</a><a class='struct ' href='struct.Tag.html' title='A structure to represent a git [tag][1]'>Tag</a><a class='struct ' href='struct.Time.html' title='Time in a signature'>Time</a><a class='struct ' href='struct.Tree.html' title='A structure to represent a git [tree][1]'>Tree</a><a class='struct ' href='struct.TreeEntry.html' title='A structure representing an entry inside of a tree. An entry is borrowed from a tree.'>TreeEntry</a><a class='struct ' href='struct.TreeIter.html' title='An iterator over the entries in a tree.'>TreeIter</a></div><div class='block enum'><h2>Enums</h2><a class='enum ' href='enum.BranchType.html' title='An enumeration for the possible types of branches'>BranchType</a><a class='enum ' href='enum.ConfigLevel.html' title='An enumeration of the possible priority levels of a config file.'>ConfigLevel</a><a class='enum ' href='enum.Delta.html' title='What type of change is described by a `DiffDelta`?'>Delta</a><a class='enum ' href='enum.DiffFormat.html' title='Possible output formats for diff data'>DiffFormat</a><a class='enum ' href='enum.Direction.html' title='An enumeration of the possible directions for a remote.'>Direction</a><a class='enum ' href='enum.ErrorCode.html' title='An enumeration of possible errors that can happen when working with a git repository.'>ErrorCode</a><a class='enum ' href='enum.ObjectType.html' title='An enumeration all possible kinds objects may have.'>ObjectType</a><a class='enum ' href='enum.RepositoryState.html' title='A listing of the possible states that a repository can be in.'>RepositoryState</a><a class='enum ' href='enum.ResetType.html' title='An enumeration of the operations that can be performed for the `reset` method on a `Repository`.'>ResetType</a><a class='enum ' href='enum.StatusShow.html' title='Enumeration of possible methods of what can be shown through a status operation.'>StatusShow</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.IntoCString.html' title='A class of types that can be converted to C strings.'>IntoCString</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>git2</a>::<wbr><a class='struct' href=''>Deltas</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]</a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-16607' href='../src/git2/diff.rs.html#51-54'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Deltas&lt;'diff&gt; {
+    // some fields omitted
+}</pre><div class='docblock'><p>An iterator over the diffs in a delta</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl&lt;'diff&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/iter/trait.Iterator.html' title='core::iter::Iterator'>Iterator</a> for <a class='struct' href='../git2/struct.Deltas.html' title='git2::Deltas'>Deltas</a>&lt;'diff&gt;</code></h3><div class='impl-items'><h4 id='assoc_type.Item' class='type'><a class='stability Unmarked' title='No stability level'></a><code>type Item = <a class='struct' href='../git2/struct.DiffDelta.html' title='git2::DiffDelta'>DiffDelta</a>&lt;'diff&gt;</code></h4>
+<h4 id='method.next' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.next' class='fnname'>next</a>(&amp;mut self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../git2/struct.DiffDelta.html' title='git2::DiffDelta'>DiffDelta</a>&lt;'diff&gt;&gt;</code></h4>
+<h4 id='method.size_hint' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.size_hint' class='fnname'>size_hint</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt;)</a></code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl&lt;'diff&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/iter/trait.DoubleEndedIterator.html' title='core::iter::DoubleEndedIterator'>DoubleEndedIterator</a> for <a class='struct' href='../git2/struct.Deltas.html' title='git2::Deltas'>Deltas</a>&lt;'diff&gt;</code></h3><div class='impl-items'><h4 id='method.next_back' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.next_back' class='fnname'>next_back</a>(&amp;mut self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../git2/struct.DiffDelta.html' title='git2::DiffDelta'>DiffDelta</a>&lt;'diff&gt;&gt;</code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl&lt;'diff&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/iter/trait.ExactSizeIterator.html' title='core::iter::ExactSizeIterator'>ExactSizeIterator</a> for <a class='struct' href='../git2/struct.Deltas.html' title='git2::Deltas'>Deltas</a>&lt;'diff&gt;</code></h3><div class='impl-items'><h4 id='method.len' class='tymethod'><a class='stability Stable' title='Stable'></a><code>fn <a href='#tymethod.len' class='fnname'>len</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "git2";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>
